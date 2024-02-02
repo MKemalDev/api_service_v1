@@ -3,6 +3,8 @@
 use App\Dal\Model\CategoryModel;
 use App\Dal\Model\SubCategoryModel;
 
+require_once __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/../../DAL/Connection.php';
 $category = new CategoryModel();
 $category->__set('title', 'Elektronik');
 

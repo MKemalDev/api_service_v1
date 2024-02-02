@@ -12,5 +12,9 @@
             "email": "mustafaksakal2525@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "doctrine/cache": "^2.2",
+        "symfony/cache": "^7.0",
+        "doctrine/collections": "^2.1"
+    }
 }

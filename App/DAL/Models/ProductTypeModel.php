@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="categories")
  */
 
-class CategoryModel extends BaseModel
+class ProductTypeModel extends BaseModel
 {
     /**
      * @ORM\Column(type="string")
@@ -21,20 +21,6 @@ class CategoryModel extends BaseModel
      * @ORM\Column(type="string")
      */
     protected $seo_slug_url;
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="category" , cascade={"persist", "remove"})
-     */
-    private $subCategories;
-
-
-
-    public function __construct()
-    {
-        $this->subCategories = new ArrayCollection();
-    }
-
 
 
 }

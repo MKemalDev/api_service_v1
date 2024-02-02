@@ -29,6 +29,10 @@ class ComposerStaticInit3ba5865ee439cf319452b0df1a1dfb7c
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
         ),
+        'R' => 
+        array (
+            'Renamesoft\\ApiServiceV1\\' => 24,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -87,6 +91,10 @@ class ComposerStaticInit3ba5865ee439cf319452b0df1a1dfb7c
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Renamesoft\\ApiServiceV1\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -137,8 +145,8 @@ class ComposerStaticInit3ba5865ee439cf319452b0df1a1dfb7c
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
-            1 => __DIR__ . '/..' . '/doctrine/common/src',
+            0 => __DIR__ . '/..' . '/doctrine/common/src',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
         ),
     );
 

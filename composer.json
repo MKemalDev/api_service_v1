@@ -1,5 +1,16 @@
 {
-    "require": {
-        "doctrine/orm": "^2.17"
-    }
+    "name": "renamesoft/api_service_v1",
+    "description": "default api service",
+    "autoload": {
+        "psr-4": {
+            "Renamesoft\\ApiServiceV1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kemal aksakal",
+            "email": "mustafaksakal2525@gmail.com"
+        }
+    ],
+    "require": {}
 }

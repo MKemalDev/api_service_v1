@@ -3,7 +3,7 @@
     "description": "default api service",
     "autoload": {
         "psr-4": {
-            "Renamesoft\\ApiServiceV1\\": "src/"
+            "app\\": "app/"
         }
     },
     "authors": [

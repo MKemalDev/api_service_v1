@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\MappedSuperclass
  */
-class BaseEntity
+class BaseModel
 {
     /**
      * @ORM\Id

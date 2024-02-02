@@ -15,6 +15,8 @@
     "require": {
         "doctrine/cache": "^2.2",
         "symfony/cache": "^7.0",
-        "doctrine/collections": "^2.1"
+        "doctrine/collections": "^2.1",
+        "doctrine/orm": "^2.17",
+        "doctrine/annotations": "^2.0"
     }
 }

@@ -33,10 +33,9 @@ class SubCategoryModel extends BaseModel
         return $this->$name;
     }
 
-    public function __set($name, $value): self
+    public function __set($name, $value): void
     {
         $this->$name = $value;
-        return $this;
     }
 
 }

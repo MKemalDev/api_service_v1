@@ -3,7 +3,7 @@
     "description": "default api service",
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
+            "App\\": "App/"
         }
     },
     "authors": [

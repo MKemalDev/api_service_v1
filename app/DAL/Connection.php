@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . "/../../vendor/autoload.php";
+
+
+// Connection.php
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
@@ -7,15 +9,11 @@ use Doctrine\ORM\EntityManager;
 $isDevMode = true;
 $config = Setup::createAnnotationMetadataConfiguration(
     [__DIR__ . "/Model"],
-    $isDevMode,
-    null,
-    null,
-    false
+    $isDevMode
 );
 
 $conn = [
     'driver' => 'pdo_mysql',
-    'host' => 'localhost',
     'user' => 'root',
     'password' => '',
     'dbname' => 'default_db',

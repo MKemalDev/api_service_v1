@@ -3,7 +3,7 @@
         'name' => 'renamesoft/api_service_v1',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '16b4b9adbaaeb850818203a1cd06e5b6021f51a3',
+        'reference' => 'a22277b4a2a7e57f27e83dd13fb71cbef24be3e2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'doctrine/annotations' => array(
-            'pretty_version' => '2.0.1',
-            'version' => '2.0.1.0',
-            'reference' => 'e157ef3f3124bbf6fe7ce0ffd109e8a8ef284e7f',
+            'pretty_version' => '1.14.3',
+            'version' => '1.14.3.0',
+            'reference' => 'fb0d71a7393298a7b232cbf4c8b1f73f3ec3d5af',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/annotations',
             'aliases' => array(),
@@ -166,7 +166,7 @@
         'renamesoft/api_service_v1' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '16b4b9adbaaeb850818203a1cd06e5b6021f51a3',
+            'reference' => 'a22277b4a2a7e57f27e83dd13fb71cbef24be3e2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

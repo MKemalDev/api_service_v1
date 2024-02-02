@@ -24,7 +24,7 @@ class CategoryModel extends BaseModel
 
 
     /**
-     * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="category" , cascade={"persist", "remove"})
      */
     private $subCategories;
 

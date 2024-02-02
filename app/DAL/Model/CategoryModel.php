@@ -3,6 +3,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +26,16 @@ class CategoryModel extends BaseModel
     private $seo_slug_url;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="CategoryModel")
+     */
+    private $subCategories;
+
+    public function __construct()
+    {
+        $this->subCategories = new ArrayCollection();
+    }
+
 
     public function __get($name)
     {
@@ -34,6 +46,11 @@ class CategoryModel extends BaseModel
     {
         $this->$name = $value;
         return $this;
+    }
+
+    public function getSubCategories(): Collection
+    {
+        return $this->subCategories;
     }
 
 }

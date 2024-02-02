@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @Entity
  * @Table(name="categories")
  */
-class CategoryModel
+class CategoryModel extends BaseModel
 {
 
 

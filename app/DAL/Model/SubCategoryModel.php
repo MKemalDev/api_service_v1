@@ -22,13 +22,6 @@ class SubCategoryModel extends BaseModel
      * @ORM\Column(type="string")
      */
     private $seo_slug_url;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $category_id;
-
-
     /**
      * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")

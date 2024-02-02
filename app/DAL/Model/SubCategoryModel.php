@@ -29,6 +29,11 @@ class SubCategoryModel extends BaseModel
     private $category_id;
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
 
     public function __get($name)
     {

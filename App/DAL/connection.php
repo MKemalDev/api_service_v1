@@ -18,7 +18,7 @@ $conn = [
     'host' => 'localhost',
     'user' => 'root',
     'password' => '',
-    'dbname' => 'rnmdb',
+    'dbname' => 'default_db',
 ];
 
 $entityManager = EntityManager::create($conn, $config);

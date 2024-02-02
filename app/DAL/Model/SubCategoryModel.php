@@ -23,6 +23,11 @@ class SubCategoryModel extends BaseModel
      */
     private $seo_slug_url;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $category_id;
+
 
 
     public function __get($name)

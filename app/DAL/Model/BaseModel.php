@@ -1,7 +1,7 @@
 <?php
 
 // src/Entity/BaseEntity.php
-namespace App\Model;
+namespace App\Dal\Model;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;

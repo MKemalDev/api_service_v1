@@ -1,7 +1,7 @@
 <?php
 
-use App\Model\CategoryModel;
-use App\Model\SubCategoryModel;
+use App\Dal\Model\CategoryModel;
+use App\Dal\Model\SubCategoryModel;
 
 $category = new CategoryModel();
 $category->__set('title', 'Elektronik');

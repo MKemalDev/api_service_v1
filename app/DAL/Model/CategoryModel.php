@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Model;
+namespace App\Dal\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

@@ -54,4 +54,10 @@ class ImageModel extends BaseModel
      * @ORM\OneToMany(targetEntity="SubCategoryImageModel", mappedBy="image")
      */
     private $subCategories;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="StoreImageModel", mappedBy="image")
+     */
+    private $stores;
 }

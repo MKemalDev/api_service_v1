@@ -18,22 +18,22 @@ class StoreModel extends BaseModel
     /**
      * @ORM\Column(type="string")
      */
-    private $title;
+    protected $title;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $seo_slug_url;
+    protected $seo_slug_url;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $description;
+    protected $description;
 
     /**
      * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="store")
      */
-    private $products;
+    protected $products;
 
     public function __construct()
     {

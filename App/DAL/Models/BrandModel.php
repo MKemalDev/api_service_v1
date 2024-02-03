@@ -18,17 +18,17 @@ class BrandModel extends BaseModel
     /**
      * @ORM\Column(type="string")
      */
-    private $title;
+    protected $title;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $seo_slug_url;
+    protected $seo_slug_url;
 
     /**
      * @ORM\OneToMany(targetEntity="ModelModel", mappedBy="brand")
      */
-    private $models;
+    protected $models;
 
     public function __construct()
     {

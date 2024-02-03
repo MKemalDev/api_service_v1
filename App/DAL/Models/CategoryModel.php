@@ -18,17 +18,17 @@ class CategoryModel extends BaseModel
     /**
      * @ORM\Column(type="string")
      */
-    private $title;
+    protected $title;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $seo_slug_url;
+    protected $seo_slug_url;
 
     /**
      * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="category")
      */
-    private $subCategories;
+    protected $subCategories;
 
     public function __construct()
     {

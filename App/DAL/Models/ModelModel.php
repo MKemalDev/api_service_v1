@@ -18,12 +18,12 @@ class ModelModel extends BaseModel
     /**
      * @ORM\Column(type="string")
      */
-    private $title;
+    protected $title;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $seo_slug_url;
+    protected $seo_slug_url;
 
     /**
      * @ORM\ManyToOne(targetEntity="BrandModel", inversedBy="models", cascade={"persist"})
@@ -35,7 +35,7 @@ class ModelModel extends BaseModel
     /**
      * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="model")
      */
-    private $products;
+    protected $products;
 
     public function __construct()
     {

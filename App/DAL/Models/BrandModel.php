@@ -46,7 +46,7 @@ class BrandModel extends BaseModel
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="ImageModel", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="ImageModel", cascade={"persist","remove"})
      * @ORM\JoinTable(name="brand_images",
      *      joinColumns={@ORM\JoinColumn(name="brand_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id")}

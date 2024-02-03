@@ -51,7 +51,7 @@ class ModelModel extends BaseModel
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="ImageModel", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="ImageModel", cascade={"persist","remove"})
      * @ORM\JoinTable(name="model_images",
      *      joinColumns={@ORM\JoinColumn(name="model_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id")}

@@ -65,12 +65,36 @@ class ProductModel extends BaseModel
 
 
     /**
-     * @ORM\ManyToMany(targetEntity="ImageModel")
+     * @ORM\ManyToMany(targetEntity="ImageModel", cascade={"persist"})
      * @ORM\JoinTable(name="product_images",
      *      joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id")}
      * )
      */
     protected $images;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->images = new ArrayCollection();
+    }
+
+    public function addImage(ImageModel $image)
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+        }
+    }
+
+    public function removeImage(ImageModel $image)
+    {
+        $this->images->removeElement($image);
+    }
+
+    public function getImages()
+    {
+        return $this->images;
+    }
+
 
 }

@@ -22,13 +22,13 @@ class ProductImageModel extends BaseModel
      * @ORM\ManyToOne(targetEntity="ProductModel", inversedBy="images")
      * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
-    private $product;
+    protected $product;
 
     /**
      * @ORM\ManyToOne(targetEntity="ImageModel", inversedBy="products")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
      */
-    private $image;
+    protected $image;
 
 
 }

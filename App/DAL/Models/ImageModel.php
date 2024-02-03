@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="images")
  */
 
-class ImagesModel extends BaseModel
+class ImageModel extends BaseModel
 {
 
     /**

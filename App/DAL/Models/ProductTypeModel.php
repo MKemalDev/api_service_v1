@@ -38,7 +38,7 @@ class ProductTypeModel extends BaseModel
     /**
      * @return Collection|ProductModel[]
      */
-    public function getSubCategories(): Collection
+    public function getProducts(): Collection
     {
         return $this->products;
     }

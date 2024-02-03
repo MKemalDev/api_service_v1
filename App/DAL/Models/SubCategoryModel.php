@@ -26,5 +26,19 @@ class SubCategoryModel extends BaseModel
      * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    private $category;
+    protected $category;
+
+    public function getValues()
+    {
+
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'seo_slug_url' => $this->seo_slug_url,
+            'category' => $this->category->getValues(),
+            'status' => $this->status,
+            'create_date' => $this->create_date,
+            'update_date' => $this->update_date
+        ];
+    }
 }

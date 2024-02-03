@@ -23,6 +23,11 @@ class ImageModel extends BaseModel
      */
     protected $status;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $is_main;
+
 
     /**
      * @ORM\OneToMany(targetEntity="ProductImageModel", mappedBy="image")

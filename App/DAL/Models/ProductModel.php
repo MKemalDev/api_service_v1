@@ -9,10 +9,10 @@ use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="sub_categories")
+ * @ORM\Table(name="products")
  */
 
-class SubCategoryModel extends BaseModel
+class ProductModel extends BaseModel
 {
 
     /**

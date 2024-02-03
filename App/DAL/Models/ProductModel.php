@@ -55,7 +55,7 @@ class ProductModel extends BaseModel
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="SubCategoryModel", inversedBy="products")
+     * @ORM\ManyToOne(targetEntity="SubCategoryModel", inversedBy="products" ,cascade={"persist"})
      * @ORM\JoinColumn(name="sub_category_id", referencedColumnName="id")
      */
     protected $subCategory;

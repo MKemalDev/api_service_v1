@@ -25,7 +25,7 @@ class SubCategoryModel extends BaseModel
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories")
+     * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories" , cascade={"persist"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     protected $category;
@@ -43,7 +43,7 @@ class SubCategoryModel extends BaseModel
 
 
     /**
-     * @return Collection|SubCategoryModel[]
+     * @return Collection|ProductModel[]
      */
     public function getProducts(): Collection
     {

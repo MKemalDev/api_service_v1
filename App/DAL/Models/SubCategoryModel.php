@@ -2,6 +2,8 @@
 
 namespace App\DAL\Models;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,6 +29,27 @@ class SubCategoryModel extends BaseModel
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     protected $category;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="subCategory" , cascade={"persist", "remove"})
+     */
+    protected $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
+
+    /**
+     * @return Collection|SubCategoryModel[]
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
 
     public function getValues()
     {

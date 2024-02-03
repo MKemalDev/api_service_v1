@@ -53,14 +53,26 @@ class ProductModel extends BaseModel
      */
     protected $productType;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SubCategoryModel", inversedBy="products")
+     * @ORM\JoinColumn(name="sub_category_id", referencedColumnName="id")
+     */
+    protected $subCategory;
+
     public function getValues()
     {
-
         return [
             'id' => $this->id,
             'title' => $this->title,
             'seo_slug_url' => $this->seo_slug_url,
-            'category' => $this->category->getValues(),
+            'description' => $this->description,
+            'sub_description' => $this->sub_description,
+            'price' => $this->price,
+            'discount' => $this->discount,
+            'stock' => $this->stock,
+            'productType' => $this->productType->getValues(),
+            'subCategory' => $this->subCategory->getValues(),
             'status' => $this->status,
             'create_date' => $this->create_date,
             'update_date' => $this->update_date

@@ -8,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="product_types")
+ * @ORM\Table(name="types")
  */
 
-class ProductTypeModel extends BaseModel
+class TypeModel extends BaseModel
 {
     /**
      * @ORM\Column(type="string")
@@ -24,23 +24,24 @@ class ProductTypeModel extends BaseModel
     protected $seo_slug_url;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="productType" , cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="CategoryModel", mappedBy="type" , cascade={"persist", "remove"})
      */
-    protected $products;
+    protected $categories;
+
 
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
 
     /**
-     * @return Collection|ProductModel[]
+     * @return Collection|CategoryModel[]
      */
-    public function getProducts(): Collection
+    public function getCategories(): Collection
     {
-        return $this->products;
+        return $this->categories;
     }
 
 }

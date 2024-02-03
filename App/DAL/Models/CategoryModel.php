@@ -31,6 +31,12 @@ class CategoryModel extends BaseModel
 
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="TypeModel", inversedBy="categories" , cascade={"persist"})
+     * @ORM\JoinColumn(name="type_id", referencedColumnName="id")
+     */
+    protected $type;
+
     public function __construct()
     {
         $this->subCategories = new ArrayCollection();

@@ -40,6 +40,7 @@ class StoreModel extends BaseModel
     {
         parent::__construct();
         $this->products = new ArrayCollection();
+
     }
 
     public function getProducts(): Collection

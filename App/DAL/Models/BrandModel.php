@@ -26,7 +26,7 @@ class BrandModel extends BaseModel
     protected $seo_slug_url;
 
     /**
-     * @ORM\OneToMany(targetEntity="ModelModel", mappedBy="brand")
+     * @ORM\OneToMany(targetEntity="ModelModel", mappedBy="brand" , cascade={"persist","remove"})
      */
     protected $models;
 

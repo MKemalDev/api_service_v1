@@ -26,7 +26,7 @@ class SubCategoryModel extends BaseModel
     protected $seo_slug_url;
 
     /**
-     * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="CategoryModel", inversedBy="subCategories", cascade={"persist" ,"remove"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     protected $category;

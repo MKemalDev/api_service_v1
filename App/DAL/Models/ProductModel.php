@@ -43,21 +43,21 @@ class ProductModel extends BaseModel
     protected $discount;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ModelModel", inversedBy="products", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="ModelModel", inversedBy="products", cascade={"persist","remove"}})
      * @ORM\JoinColumn(name="model_id", referencedColumnName="id")
      */
     protected $model;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="SubCategoryModel", inversedBy="products", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="SubCategoryModel", inversedBy="products", cascade={"persist","remove"}})
      * @ORM\JoinColumn(name="sub_category_id", referencedColumnName="id")
      */
     protected $subCategory;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="StoreModel", inversedBy="products", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="StoreModel", inversedBy="products", cascade={"persist" ,"remove"})
      * @ORM\JoinColumn(name="store_id", referencedColumnName="id")
      */
     protected $store;

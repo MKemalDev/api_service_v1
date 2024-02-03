@@ -26,7 +26,7 @@ class CategoryModel extends BaseModel
     protected $seo_slug_url;
 
     /**
-     * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="SubCategoryModel", mappedBy="category" , cascade={"persist" ,"remove"})
      */
     protected $subCategories;
 

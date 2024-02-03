@@ -31,7 +31,7 @@ class StoreModel extends BaseModel
     protected $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="store")
+     * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="store" , cascade={"persist","remove"})
      */
     protected $products;
 

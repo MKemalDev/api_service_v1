@@ -33,7 +33,7 @@ class ModelModel extends BaseModel
 
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="model")
+     * @ORM\OneToMany(targetEntity="ProductModel", mappedBy="model" , cascade={"persist","remove"})
      */
     protected $products;
 

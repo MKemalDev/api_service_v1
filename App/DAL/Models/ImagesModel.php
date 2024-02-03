@@ -17,4 +17,15 @@ class ImagesModel extends BaseModel
      * @ORM\Column(type="string")
      */
     protected $image;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $status;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="ProductImageModel", mappedBy="image")
+     */
+    private $products;
 }

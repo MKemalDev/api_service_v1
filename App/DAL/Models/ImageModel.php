@@ -28,4 +28,10 @@ class ImageModel extends BaseModel
      * @ORM\OneToMany(targetEntity="ProductImageModel", mappedBy="image")
      */
     private $products;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="BrandImageModel", mappedBy="image")
+     */
+    private $brands;
 }

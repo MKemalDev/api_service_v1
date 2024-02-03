@@ -41,11 +41,40 @@ class ModelModel extends BaseModel
     {
         parent::__construct();
         $this->products = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getProducts(): Collection
     {
         return $this->products;
+    }
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ImageModel", cascade={"persist"})
+     * @ORM\JoinTable(name="model_images",
+     *      joinColumns={@ORM\JoinColumn(name="model_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id")}
+     * )
+     */
+    protected $images;
+
+
+    public function addImage(ImageModel $image)
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+        }
+    }
+
+    public function removeImage(ImageModel $image)
+    {
+        $this->images->removeElement($image);
+    }
+
+    public function getImages()
+    {
+        return $this->images;
     }
 
 }

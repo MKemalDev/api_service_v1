@@ -35,6 +35,7 @@ class StoreModel extends BaseModel
      */
     protected $products;
 
+
     public function __construct()
     {
         parent::__construct();

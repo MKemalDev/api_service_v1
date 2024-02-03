@@ -57,10 +57,10 @@ class SubCategoryModel extends BaseModel
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="VendorModel", inversedBy="products", cascade={"persist"})
-     * @ORM\JoinColumn(name="vendor_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="StoreModel", inversedBy="products", cascade={"persist"})
+     * @ORM\JoinColumn(name="store_id", referencedColumnName="id")
      */
-    protected $vendor;
+    protected $store;
 
 
 

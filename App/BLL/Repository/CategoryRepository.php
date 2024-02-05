@@ -136,8 +136,7 @@ class CategoryRepository extends BaseRepository implements IRepository
                 "status" => $entity->__get('status')
             ];
         }
-        echo json_encode(["data" => $responseData, "status" => "success"]);
-        return [];
+        return $responseData;
     }
 
     public function delete(int $id)

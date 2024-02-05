@@ -68,7 +68,32 @@ class SubCategoryRepository extends BaseRepository implements IRepository
                 "status" => $entity->__get('status')
             ];
         }
-        return [];
+        return $responseData;
+    }
+
+    public function getAllWithProducts()
+    {
+        $entities = $this->entityManager->getRepository(SubCategoryModel::class)->findAll();
+        $responseData = [];
+        foreach ($entities as $entity) {
+            $imageModel = $entity->getImages();
+            $image = $this->getSubEntity($imageModel);
+            $productModel = $entity->getProducts();
+            $products = $this->getSubEntity($productModel);
+            $responseData[] = [
+                'id' => $entity->__get('id'),
+                'title' => $entity->__get('title'),
+                "images" => $image,
+                "image_count" => count($image),
+                "products" => $products,
+                "products_count" => count($products),
+                'seo_slug_url' => $entity->__get('seo_slug_url'),
+                'created_at' => $entity->__get('created_at'),
+                'updated_at' => $entity->__get('updated_at'),
+                "status" => $entity->__get('status')
+            ];
+        }
+        return $responseData;
     }
 
     public function delete(int $id)

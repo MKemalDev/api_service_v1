@@ -144,10 +144,24 @@ class CategoryRepository extends BaseRepository implements IRepository
 
     public function save(array $data)
     {
+        $entity = $this->saveEntity($data);
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
+    }
+
+    public function saveWithImage(array $data, array $images)
+    {
+        $entity = $this->saveEntity($data);
+        foreach ($images as $key => $value) {
+            $entity->addImage($value);
+        }
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
     }
 
     public function update(int $id, array $data)
     {
+        $this->updateEntity($id, $data);
     }
 
     private function getSubEntity($subEntity)

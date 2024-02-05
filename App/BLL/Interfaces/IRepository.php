@@ -8,11 +8,11 @@ interface IRepository
 {
 
     public function getById(int $id);
-    public function getAll();
+    public function getAll(): array;
 
     public function delete(int $id);
 
-    public function save($entity);
+    public function save(array $data);
 
-    public function update($entity);
+    public function update(int $id, array $data);
 }

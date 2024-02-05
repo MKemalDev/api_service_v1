@@ -4,6 +4,7 @@
 namespace App\BLL\Repository;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Mapping\Entity;
 
 class BaseRepository
 {
@@ -16,7 +17,7 @@ class BaseRepository
         $this->entityClass = new $entityClass();
     }
 
-    protected function createEntity(array $data)
+    protected function saveEntity(array $data)
     {
         $entity = $this->entityClass;
         foreach ($data as $key => $value) {
@@ -41,7 +42,7 @@ class BaseRepository
         $this->entityManager->flush();
     }
 
-    protected function getById(int $id)
+    protected function getEntity(int $id)
     {
         return $this->entityManager->find($this->entityClass::class, $id);
     }

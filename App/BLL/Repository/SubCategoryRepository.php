@@ -53,6 +53,21 @@ class SubCategoryRepository extends BaseRepository implements IRepository
     }
     public function getAll(): array
     {
+        $entities = $this->entityManager->getRepository(SubCategoryModel::class)->findAll();
+        $responseData = [];
+        foreach ($entities as $entity) {
+            $imageModel = $entity->getImages();
+            $image = $this->getSubEntity($imageModel);
+            $responseData[] = [
+                'id' => $entity->__get('id'),
+                'title' => $entity->__get('title'),
+                "images" => $image,
+                'seo_slug_url' => $entity->__get('seo_slug_url'),
+                'created_at' => $entity->__get('created_at'),
+                'updated_at' => $entity->__get('updated_at'),
+                "status" => $entity->__get('status')
+            ];
+        }
         return [];
     }
 

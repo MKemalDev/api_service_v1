@@ -11,4 +11,19 @@ class CategoryController
     {
         $this->categoryRepository = new CategoryRepository($entityManager);
     }
+
+    public function getAllValuesWithDefault()
+    {
+        return $this->categoryRepository->getAll();
+    }
+
+    public function getAllValuesWithSubCategoryAndImage()
+    {
+        return $this->categoryRepository->getAllWithImageAndSubCategory();
+    }
+
+    public function getAllValuesWithSubCategory()
+    {
+        return $this->categoryRepository->getAllWithSubCategory();
+    }
 }

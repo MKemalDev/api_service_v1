@@ -26,9 +26,7 @@ class CategoryRepository extends BaseRepository implements IRepository
             'updated_at' => $entity->__get('updated_at'),
             "status" => $entity->__get('status')
         ];
-
-        echo json_encode(["data" => $responseData, "status" => "success"]);
-        exit;
+        return $responseData;
     }
 
 
@@ -141,6 +139,7 @@ class CategoryRepository extends BaseRepository implements IRepository
 
     public function delete(int $id)
     {
+        return $this->deleteEntity($id);
     }
 
     public function save(array $data)

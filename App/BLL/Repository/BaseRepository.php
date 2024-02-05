@@ -40,6 +40,7 @@ class BaseRepository
         $entity = $this->entityManager->find($this->entityClass::class, $id);
         $this->entityManager->remove($entity);
         $this->entityManager->flush();
+        return [];
     }
 
     protected function getEntity(int $id)

@@ -98,15 +98,32 @@ class SubCategoryRepository extends BaseRepository implements IRepository
 
     public function delete(int $id)
     {
-
+        return $this->deleteEntity($id);
     }
 
     public function save(array $data)
     {
+        $entity = $this->saveEntity($data);
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
+    }
+
+    public function saveWithImage(array $data, array $images)
+    {
+        $entity = $this->saveEntity($data);
+        foreach ($images as $key => $value) {
+            $entity->addImage($value);
+        }
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
     }
 
     public function update(int $id, array $data)
     {
+        $entity = $this->updateEntity($id, $data);
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
+        return [];
     }
 
     private function getSubEntity($subEntity)

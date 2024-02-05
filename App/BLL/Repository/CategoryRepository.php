@@ -82,10 +82,60 @@ class CategoryRepository extends BaseRepository implements IRepository
         $entities = $this->entityManager->getRepository(CategoryModel::class)->findAll();
         $responseData = [];
 
-        foreach ($entities as $key => $value) {
-            $responseData[] = $this->getSubEntity($value);
+        foreach ($entities as $entity) {
+            $responseData[] = [
+                'id' => $entity->__get('id'),
+                'title' => $entity->__get('title'),
+                'seo_slug_url' => $entity->__get('seo_slug_url'),
+                'created_at' => $entity->__get('created_at'),
+                'updated_at' => $entity->__get('updated_at'),
+                "status" => $entity->__get('status')
+            ];
         }
+        return $responseData;
+    }
 
+    public function getAllWithSubCategory(): array
+    {
+        $entities = $this->entityManager->getRepository(CategoryModel::class)->findAll();
+        $responseData = [];
+
+        foreach ($entities as $entity) {
+            $subCategoryModel = $entity->getSubCategories();
+            $subCategory = $this->getSubEntity($subCategoryModel);
+            $responseData[] = [
+                'id' => $entity->__get('id'),
+                'title' => $entity->__get('title'),
+                'subCategories' => $subCategory,
+                'seo_slug_url' => $entity->__get('seo_slug_url'),
+                'created_at' => $entity->__get('created_at'),
+                'updated_at' => $entity->__get('updated_at'),
+                "status" => $entity->__get('status')
+            ];
+        }
+        return $responseData;
+    }
+
+    public function getAllWithImageAndSubCategory(): array
+    {
+        $entities = $this->entityManager->getRepository(CategoryModel::class)->findAll();
+        $responseData = [];
+        foreach ($entities as $entity) {
+            $subCategoryModel = $entity->getSubCategories();
+            $subCategory = $this->getSubEntity($subCategoryModel);
+            $imageModel = $entity->getImages();
+            $images = $this->getSubEntity($imageModel);
+            $responseData[] = [
+                'id' => $entity->__get('id'),
+                'title' => $entity->__get('title'),
+                'subCategories' => $subCategory,
+                'images' => $images,
+                'seo_slug_url' => $entity->__get('seo_slug_url'),
+                'created_at' => $entity->__get('created_at'),
+                'updated_at' => $entity->__get('updated_at'),
+                "status" => $entity->__get('status')
+            ];
+        }
         echo json_encode(["data" => $responseData, "status" => "success"]);
         return [];
     }

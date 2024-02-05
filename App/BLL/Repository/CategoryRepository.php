@@ -161,7 +161,10 @@ class CategoryRepository extends BaseRepository implements IRepository
 
     public function update(int $id, array $data)
     {
-        $this->updateEntity($id, $data);
+        $entity = $this->updateEntity($id, $data);
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
+        return [];
     }
 
     private function getSubEntity($subEntity)
